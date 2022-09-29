@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    
+
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<style>
+#btn{
+    margin-left: 100px;
+    width: 200px;
+    background-color:rgb(34, 74, 90);
+    
+    border: none;
+    font-family: 'Aclonica';font-size: 20px;
+
+}
+h1{
+    
+    font-family: 'Aclonica';font-size: 42px;
+
+color:rgb(34, 74, 90);
+}
+body{
+    background-image: url("blue\ back.jpg");
+    
+    color:rgb(34, 74, 90);
+border-radius: 20px;
+font-family: 'Aclonica';font-size: 15px;
+background-size: cover;
+/* height: 800px; */
+}
+#form6Example8{
+  background-color:rgb(34, 74, 90);
+  border:rgb(34, 74, 90);
+}
+
+
+
+</style>
+<body>
+      <!-- 2 column grid layout with text inputs for the first and last names -->
+      <div class="container">
+
+
+        <div class="row" style="height: 120px;"></div>
+
+        <h1 align="center">REGISTRATION FORM</h1>
+        <div class="row" style="height: 50px;"></div>
+        <form action="log in.html">
+
+        <div class="row">
+            <div class="col-sm-4"> </div> 
+            <div class="col-sm-4">
+                <div class="row mb-4">
+                  <div class="col">
+                    <div class="form-outline">
+                      <input style="color:rgb(75, 133, 156);" type="text" id="form6Example1" class="form-control" required />
+                      &nbsp;<label class="form-label" for="form6Example1">First name</label>
+                      <p id="name"></p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <input style="color:rgb(75, 133, 156);" type="text" id="form6Example2" class="form-control" />
+                      &nbsp;<label class="form-label" for="form6Example2">Last name</label>
+                      <p id="last"></p>
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+                  <input style="color: rgb(75, 133, 156);" type="text" id="form6Example3" class="form-control" required />
+                  &nbsp;<label class="form-label" for="form6Example3">Company name</label>
+                  <p id="cmpny"></p>
+                </div>
+              
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+                  <input style="color: rgb(75, 133, 156);" type="text" id="form6Example4" class="form-control" required />
+                 &nbsp; <label class="form-label" for="form6Example4">Address</label>
+                 <p id="adrs"></p>
+                </div>
+              
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input style="color:rgb(75, 133, 156);" type="email" id="form6Example5" class="form-control" required />
+                 &nbsp; <label class="form-label" for="form6Example5">Email</label>
+                 <p id="mail"></p>
+                </div>
+              
+                <!-- Number input -->
+                <div class="form-outline mb-4">
+                  <input style="color: rgb(75, 133, 156);" type="number" id="form6Example6" class="form-control" required />
+                 &nbsp; <label class="form-label" for="form6Example6">Phone</label>
+                 <p id="phn"></p>
+                </div>
+              
+                <!-- Message input -->
+                <div class="form-outline mb-4">
+                  <textarea style="color:rgb(75, 133, 156);" class="form-control" id="form6Example7" rows="4"></textarea>
+                  &nbsp;<label class="form-label" for="form6Example7">Additional information</label>
+                
+                </div>
+              
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                  <input style="color:rgb(75, 133, 156);" class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
+                  <label class="form-check-label" for="form6Example8"> Create an account? </label>
+                  
+                </div>
+              
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4" onclick="validation()" id="btn">SUBMIT</button></a>
+              </form></div>
+        <div class="col-sm-4"> </div> 
+    
+     
+    
+        </div>
+    </div>
+    <script>
+        var a="[A-Za-z ]{1,32}"
+        var b="[\w',-\\/.\s]"
+        var c="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        var d="[789][0-9]{9}"
+function validation(){
+
+  var fname=document.getElementById("form6Example1").value 
+  var lname=document.getElementById("form6Example2").value
+  var company=document.getElementById("form6Example3").value
+  var address=document.getElementById("form6Example4").value
+  var email=document.getElementById("form6Example5").value
+  var phone=document.getElementById("form6Example6").value
+  var information=document.getElementById("form6Example7").value
+
+  if(fname.match(a))
+  {
+    document.getElementById("name").innerHTML="correct name...!"
+
+    return true;
+// // console.log(fname)
+    if(lname.match(a))
+    {
+      document.getElementById("last").innerHTML="correct name...!"
+      return true;
+
+      if(company.match(a))
+      {
+        return true;
+
+        document.getElementById("cmpny").innerHTML="correct..!"
+
+// if(company.match(a))
+// {
+
+  if(address.match(b))
+  {
+    return true;
+
+    document.getElementById("adrs").innerHTML="correct address...!"
+
+
+    if(email.match(c))
+    {
+      return true;
+
+      document.getElementById("mail").innerHTML="correct...!"
+
+      if(phone.match(d))
+      {
+        return true;
+
+        document.getElementById("phn").innerHTML="correct...!"
+
+        if(information.match(a))
+        {
+          return true;
+          alert("REGISTRATION SUCCESSFUL...!")
+        }
+        else{
+    alert("REGISTRATION NOT SUCCESSFUL...!")
+    return false
+  }
+      }
+      else{
+    document.getElementById("phn").innerHTML="Please enter correct number...!"
+    return false
+  }
+      
+    }
+    else{
+    document.getElementById("mail").innerHTML="invalid email id...!"
+    return false
+  }
+    
+  }
+  else{
+    document.getElementById("adrs").innerHTML="Please enter correct address...!"
+    return false
+  }
+  
+// }
+      }
+      else{
+    document.getElementById("cmpny").innerHTML="Please enter correct detail...!"
+    return false
+  }
+    
+    }
+    else{
+      document.getElementById("last").innerHTML="Please enter correct name...!"
+return false
+  }
+    
+  }
+  else{
+    document.getElementById("name").innerHTML="Please enter correct name...!"
+    return false
+  }
+
+}
+
+
+
+
+    </script>
+</body>
+</html> 
